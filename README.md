@@ -1,18 +1,19 @@
 # Home-Chef
 
-👨‍🍳 Home Chef – Aplicativo Inteligente de Receitas
-👤 Autor
+# 👨‍🍳 Home Chef – Aplicativo Inteligente de Receitas
+### 👤 Autor
 
 Nome: Gabriel Alves
+
 Função: Desenvolvedor Full Stack
 Projeto Individual
 
-🎯 1. Objetivo Geral
+## 🎯 1. Objetivo Geral
 
 O projeto Home Chef tem como objetivo desenvolver um aplicativo mobile inteligente que auxilia o usuário a encontrar receitas com base nos ingredientes disponíveis em casa.
 A aplicação busca reduzir o desperdício de alimentos e promover praticidade no dia a dia, oferecendo sugestões rápidas e personalizadas.
 
-🎯 2. Objetivos Específicos
+# 🎯 2. Objetivos Específicos
 
 Criar uma interface fluida e intuitiva utilizando Flutter.
 
@@ -28,8 +29,8 @@ Permitir uso offline por meio de cache local.
 
 Automatizar build, testes e deploy usando Jenkins (CI/CD).
 
-📋 3. Escopo do Projeto
-🔹 Funcionalidades Principais
+# 📋 3. Escopo do Projeto
+## 🔹 Funcionalidades Principais
 
 Autenticação de Usuário
 
@@ -59,7 +60,7 @@ Filtros Avançados
 
 Tempo, tipo de refeição e dificuldade.
 
-⚙️ 4. Tecnologias Utilizadas
+# ⚙️ 4. Tecnologias Utilizadas
 Camada	Tecnologia	Função
 Frontend	Flutter	Interface mobile
 Backend	Java + Spring Boot	API REST
@@ -69,7 +70,7 @@ API Externa	TheMealDB	Fonte de receitas
 Cache Local	Hive	Acesso offline
 CI/CD	Jenkins	Build, teste e deploy
 Testes	JUnit + Mockito / Flutter Test	Validação automatizada
-🧠 5. Arquitetura e Engenharia de Software
+# 🧠 5. Arquitetura e Engenharia de Software
 
 Backend: arquitetura MVC (Controller / Service / Repository).
 
@@ -83,9 +84,9 @@ Versionamento: Git + GitHub com Pull Requests e branches.
 
 Gerenciamento de dependências: Maven (Java) e pubspec.yaml (Flutter).
 
-🧪 6. Testes Automatizados
+# 🧪 6. Testes Automatizados
 
-Backend
+## Backend
 
 Testes unitários (serviços e integração com TheMealDB).
 
@@ -93,30 +94,30 @@ Teste de autenticação via Firebase SDK.
 
 Testes de endpoint /recipes/search.
 
-Frontend
+## Frontend
 
 Testes unitários de lógica (cache e filtros).
 
 Testes de widget (navegação e renderização).
 
-CI/CD
+## CI/CD
 
 Jenkins roda testes antes do build.
 
 Apenas builds bem-sucedidos são implantados.
 
-🔄 7. Pipeline CI/CD (Jenkins)
+# 🔄 7. Pipeline CI/CD (Jenkins)
 
-Build Backend: compila via Maven e executa testes JUnit.
+ Build Backend: compila via Maven e executa testes JUnit.
 
-Build Frontend: executa flutter test e gera APK.
+ Build Frontend: executa flutter test e gera APK.
 
-Deploy: backend (Render/Heroku) e app (Firebase App Distribution).
+ Deploy: backend (Render/Heroku) e app (Firebase App Distribution).
 
-Relatórios: Jenkins notifica status de builds e testes.
+ Relatórios: Jenkins notifica status de builds e testes.
 
-🧩 8. Requisitos
-Requisitos Funcionais
+# 🧩 8. Requisitos
+### Requisitos Funcionais
 
 RF01: O usuário deve se autenticar via Firebase.
 
@@ -128,7 +129,7 @@ RF04: O sistema deve salvar histórico de buscas.
 
 RF05: O app deve funcionar offline.
 
-Requisitos Não Funcionais
+### Requisitos Não Funcionais
 
 RNF01: Interface responsiva e intuitiva.
 
@@ -140,7 +141,7 @@ RNF04: Deve ter pipeline CI/CD no Jenkins.
 
 RNF05: Seguir boas práticas de Engenharia de Software.
 
-🧾 9. Conclusão
+# 🧾 9. Conclusão
 
 O Home Chef combina tecnologias modernas — Flutter, Spring Boot e Firebase — em uma aplicação prática, escalável e automatizada com Jenkins.
 O projeto demonstra domínio em desenvolvimento mobile e backend, versionamento, testes e automação, cumprindo integralmente as exigências de Engenharia de Software.
