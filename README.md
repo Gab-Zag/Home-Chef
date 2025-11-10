@@ -145,3 +145,35 @@ RNF05: Seguir boas práticas de Engenharia de Software.
 
 O Home Chef combina tecnologias modernas — Flutter, Spring Boot e Firebase — em uma aplicação prática, escalável e automatizada com Jenkins.
 O projeto demonstra domínio em desenvolvimento mobile e backend, versionamento, testes e automação, cumprindo integralmente as exigências de Engenharia de Software.
+
+# 🧱 Estrutura inicial
+
+## 📱 Frontend (Flutter)
+
+``` home_chef/
+ ├─ lib/
+ │   ├─ main.dart
+ │   ├─ core/          # Configurações globais, tema, constantes
+ │   ├─ models/        # Modelos de dados (Recipe, User, etc.)
+ │   ├─ services/      # Comunicação com a API e Firebase
+ │   ├─ viewmodels/    # Lógica de estado (usando Riverpod)
+ │   └─ views/         # Telas (Login, Home, Detalhe, Favoritos)
+ ├─ pubspec.yaml
+ └─ test/
+     └─ unit_tests/
+```
+##  ☕ Backend (Spring Boot)
+```
+homechef-api/
+ ├─ src/
+ │   ├─ main/java/com/homechef/
+ │   │   ├─ controller/
+ │   │   ├─ service/
+ │   │   ├─ model/
+ │   │   ├─ config/           # Integração Firebase e segurança JWT
+ │   │   └─ HomeChefApi.java  # Classe principal
+ │   └─ test/java/com/homechef/
+ │       └─ service/
+ ├─ pom.xml
+ └─ Jenkinsfile
+```
