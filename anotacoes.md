@@ -27,3 +27,11 @@ para teste utilizando o id: http://localhost:8080/recipes/details?id=52940
 ```
 
 criar o recipe em model sem lombok por questao de bugs
+
+endpoints
+```
+GET /recipes/search?ingredients=chicken,tomato
+```
+```
+GET /recipes/details?id=52795
+```
