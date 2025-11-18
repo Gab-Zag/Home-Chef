@@ -19,7 +19,6 @@ public class Recipe {
         this.image = image;
     }
 
-    // getters e setters
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
