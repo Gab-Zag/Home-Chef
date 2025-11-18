@@ -14,21 +14,25 @@ public class RecipeService {
 
     private static final String API_SEARCH_URL = "https://www.themealdb.com/api/json/v1/1/filter.php?i=";
     private static final String API_DETAILS_URL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
+
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
 
-    public RecipeService() {
-        this.restTemplate = new RestTemplate();
-        this.objectMapper = new ObjectMapper();
+    public RecipeService(RestTemplate restTemplate, ObjectMapper objectMapper) {
+        this.restTemplate = restTemplate;
+        this.objectMapper = objectMapper;
     }
 
-    // busca receitas por ingredientes
     public List<Recipe> searchByIngredients(String ingredients) {
         List<Recipe> recipes = new ArrayList<>();
 
         try {
             String response = restTemplate.getForObject(API_SEARCH_URL + ingredients, String.class);
+
+            if (response == null) return recipes;
+
             JsonNode root = objectMapper.readTree(response);
+            if (root == null || root.path("meals").isNull()) return recipes;
 
             JsonNode meals = root.path("meals");
             if (meals.isArray()) {
@@ -48,7 +52,7 @@ public class RecipeService {
         return recipes;
     }
 
-    // busca detalhes completos da receita
+
     public Recipe getRecipeDetails(String id) {
         try {
             String response = restTemplate.getForObject(API_DETAILS_URL + id, String.class);

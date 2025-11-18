@@ -35,3 +35,7 @@ GET /recipes/search?ingredients=chicken,tomato
 ```
 GET /recipes/details?id=52795
 ```
+
+mostre como deixar esses cards no estilo Pinterest / aplicativo de receitas moderno, com imagens grandes e gradiente sobre o texto
+
+o spring boot ja tem junit nao preciso colocalo nem o mockito
