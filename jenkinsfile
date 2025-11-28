@@ -22,7 +22,7 @@ pipeline {
             }
             post {
                 success {
-                    archiveArtifacts artifacts: 'HOME-CHEF/target/*.jar', fingerprint: true
+                    archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
                 }
             }
         }
