@@ -1,6 +1,4 @@
 package com.homechef.homechef_api.controller;
-
-import com.homechef.homechef_api.model.Recipe;
 import com.homechef.homechef_api.services.FakeRecipeService;
 import com.homechef.homechef_api.services.RecipeService;
 import org.junit.jupiter.api.Test;

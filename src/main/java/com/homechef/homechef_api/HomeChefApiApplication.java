@@ -1,6 +1,4 @@
 package com.homechef.homechef_api;
-
-import com.homechef.homechef_api.controller.RecipeController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
