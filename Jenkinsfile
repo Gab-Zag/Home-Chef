@@ -16,9 +16,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                dir('HOME-CHEF') {
-                    sh 'mvn clean install -DskipTests'
-                }
+                sh 'mvn clean install -DskipTests'
             }
             post {
                 success {
@@ -29,9 +27,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                dir('HOME-CHEF') {
-                    sh 'mvn clean test site'
-                }
+                sh 'mvn clean test site'
             }
             post {
                 always {
