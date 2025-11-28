@@ -42,3 +42,5 @@ pipeline {
 
     }
 }
+
+//rename to Jenkinsfile and place in root directory of your project
