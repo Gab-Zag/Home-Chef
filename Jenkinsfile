@@ -16,7 +16,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'mvn clean install -DskipTests'
+                bat 'mvnw.cmd clean install -DskipTests'
             }
             post {
                 success {
@@ -27,7 +27,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'mvn clean test site'
+                bat 'mvnw.cmd clean test site'
             }
             post {
                 always {
