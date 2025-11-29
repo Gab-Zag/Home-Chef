@@ -1,6 +1,6 @@
 Utilizei o https://start.spring.io/
 
-para teste: http://localhost:8080/recipes/search?ingredients=chicken
+para teste: http://localhost:9090/recipes/search?ingredients=chicken
 
 ```
 {
@@ -13,7 +13,7 @@ para teste: http://localhost:8080/recipes/search?ingredients=chicken
   },
  ```
 
-para teste utilizando o id: http://localhost:8080/recipes/details?id=52940
+para teste utilizando o id: http://localhost:9090/recipes/details?id=52940
 
 ```
 {
@@ -39,67 +39,3 @@ GET /recipes/details?id=52795
 mostre como deixar esses cards no estilo Pinterest / aplicativo de receitas moderno, com imagens grandes e gradiente sobre o texto
 
 o spring boot ja tem junit nao preciso colocalo nem o mockito
-
-maven.yaml
-
-```
-pegue este maven.yaml e converta para o jenkinsfile
-name: Pipeline Home-Chef-Backend
-
-on:
-  workflow_dispatch:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 21
-      uses: actions/setup-java@v4
-      with:
-        java-version: '21'
-        distribution: 'temurin'
-        cache: maven
-    - name: Build with Maven
-      run: 
-        cd HOME-CHEF
-        mvn clean install -DskipTests
-
-    - name: upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: jar file
-        path: HOME-CHEF/target/*.jar
-
-  test:
-
-    needs: build
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 21
-      uses: actions/setup-java@v4
-      with:
-        java-version: '21'
-        distribution: 'temurin'
-        cache: maven
-    - name: Build with Maven
-      run: 
-        cd HOME-CHEF
-        mvn clean test site
-
-    - name: upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: test report
-        path: HOME-CHEF/target/site/
-
-```
