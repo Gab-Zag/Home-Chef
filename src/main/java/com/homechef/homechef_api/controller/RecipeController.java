@@ -18,6 +18,11 @@ public class RecipeController {
         this.recipeService = recipeService;
     }
 
+    @GetMapping("/all")
+    public List<Recipe> getAllRecipes() {
+        return recipeService.getAllRecipes();
+    }
+
     @GetMapping("/search")
     public List<Recipe> searchRecipe(@RequestParam String ingredients){
         return recipeService.searchByIngredients(ingredients);

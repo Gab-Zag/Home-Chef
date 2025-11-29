@@ -23,6 +23,41 @@ public class RecipeService {
         this.objectMapper = objectMapper;
     }
 
+    public List<Recipe> getAllRecipes() {
+        List<Recipe> recipes = new ArrayList<>();
+
+        try {
+            String response =
+                    restTemplate.getForObject("https://www.themealdb.com/api/json/v1/1/search.php?s=", String.class);
+
+            if (response == null) return recipes;
+
+            JsonNode root = objectMapper.readTree(response);
+            JsonNode meals = root.path("meals");
+
+            if (!meals.isArray()) return recipes;
+
+            for (JsonNode meal : meals) {
+                recipes.add(
+                        new Recipe(
+                                meal.path("idMeal").asText(),
+                                meal.path("strMeal").asText(),
+                                meal.path("strCategory").asText(),
+                                meal.path("strArea").asText(),
+                                meal.path("strInstructions").asText(),
+                                meal.path("strMealThumb").asText()
+                        )
+                );
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return recipes;
+    }
+
+
     public List<Recipe> searchByIngredients(String ingredients) {
         List<Recipe> recipes = new ArrayList<>();
 
