@@ -13,19 +13,31 @@ public class FakeRecipeService extends RecipeService {
     }
 
     @Override
-    public List<Recipe> searchByIngredients(String ingredientsQuery) {
-        return List.of(
-                new Recipe(
-                        "1",
-                        "Chicken Curry",
-                        "Chicken",
-                        "Indian",
-                        "Mix everything and cook for 20 minutes.",
-                        "img.png",
-                        "Chicken, Curry Powder, Salt",
-                        "500g, 2 tbsp, to taste"
-                )
-        );
+    public List<Recipe> searchByIngredients(String ingredient) {
+
+        // → Necessário para o teste "searchEmptyIngredientsReturnsEmptyList"
+        if (ingredient == null || ingredient.isBlank()) {
+            return List.of();
+        }
+
+        // → Retorno para "chicken" (necessário para o teste principal)
+        if (ingredient.equalsIgnoreCase("chicken")) {
+            return List.of(
+                    new Recipe(
+                            "1",
+                            "Chicken Curry",
+                            "Main",
+                            "Indian",
+                            "Cook chicken with curry powder.",
+                            "img.png",
+                            "Chicken, Curry",
+                            "200g, 2 tbsp"
+                    )
+            );
+        }
+
+        // → Para qualquer outro ingrediente, retorna vazio
+        return List.of();
     }
 
     @Override
@@ -37,8 +49,10 @@ public class FakeRecipeService extends RecipeService {
                 "USA",
                 "Season and grill until desired doneness.",
                 "photo.png",
-                "Beef, Salt, Garlic",
-                "1kg, 1 tsp, 2 cloves"
+                "Salt, Beef",
+                "1 tsp, 300g"
         );
     }
+
+
 }
