@@ -1,4 +1,5 @@
 package com.homechef.homechef_api.controller;
+
 import com.homechef.homechef_api.services.FakeRecipeService;
 import com.homechef.homechef_api.services.RecipeService;
 import org.junit.jupiter.api.Test;
@@ -46,7 +47,7 @@ public class RecipeControllerTest {
                 .andExpect(jsonPath("$.name").value("Beef Steak"))
                 .andExpect(jsonPath("$.category").value("Beef"))
                 .andExpect(jsonPath("$.area").value("USA"))
-                .andExpect(jsonPath("$.instructions").value("Cook it well"))
+                .andExpect(jsonPath("$.instructions").value("Season and grill until desired doneness."))
                 .andExpect(jsonPath("$.image").value("photo.png"));
     }
 }

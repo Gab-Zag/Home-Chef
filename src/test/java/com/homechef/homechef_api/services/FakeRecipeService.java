@@ -13,15 +13,43 @@ public class FakeRecipeService extends RecipeService {
     }
 
     @Override
-    public List<Recipe> searchByIngredients(String ingredients) {
-        return List.of(
-                new Recipe("1", "Chicken Curry", "Category", "Area", "Instructions", "img.png")
-        );
+    public List<Recipe> searchByIngredients(String ingredient) {
+
+        if (ingredient == null || ingredient.isBlank()) {
+            return List.of();
+        }
+
+        if (ingredient.equalsIgnoreCase("chicken")) {
+            return List.of(
+                    new Recipe(
+                            "1",
+                            "Chicken Curry",
+                            "Main",
+                            "Indian",
+                            "Cook chicken with curry powder.",
+                            "img.png",
+                            "Chicken, Curry",
+                            "200g, 2 tbsp"
+                    )
+            );
+        }
+
+        return List.of();
     }
 
     @Override
     public Recipe getRecipeDetails(String id) {
-        return new Recipe("99", "Beef Steak", "Beef", "USA", "Cook it well", "photo.png");
+        return new Recipe(
+                "99",
+                "Beef Steak",
+                "Beef",
+                "USA",
+                "Season and grill until desired doneness.",
+                "photo.png",
+                "Salt, Beef",
+                "1 tsp, 300g"
+        );
     }
-}
 
+
+}

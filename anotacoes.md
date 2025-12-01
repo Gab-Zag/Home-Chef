@@ -12,6 +12,7 @@ para teste: http://localhost:9090/recipes/search?ingredients=chicken
     "image": "https://www.themealdb.com/images/media/meals/sypxpx1515365095.jpg"
   },
  ```
+api com todas as receitas : http://localhost:9090/recipes/all
 
 para teste utilizando o id: http://localhost:9090/recipes/details?id=52940
 

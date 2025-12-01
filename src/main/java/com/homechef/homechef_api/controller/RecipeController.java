@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/recipes")
 @CrossOrigin(origins = "*")
@@ -16,6 +15,11 @@ public class RecipeController {
 
     public RecipeController(RecipeService recipeService){
         this.recipeService = recipeService;
+    }
+
+    @GetMapping("/all")
+    public List<Recipe> getAllRecipes() {
+        return recipeService.getAllRecipes();
     }
 
     @GetMapping("/search")
