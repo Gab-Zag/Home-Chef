@@ -73,7 +73,6 @@ public class RecipeService {
             for (JsonNode meal : meals) {
                 String id = meal.path("idMeal").asText();
 
-                // Segunda requisição para pegar category e area
                 String detailResponse = restTemplate.getForObject(API_DETAILS_URL + id, String.class);
                 JsonNode detailRoot = objectMapper.readTree(detailResponse);
                 JsonNode details = detailRoot.path("meals").get(0);

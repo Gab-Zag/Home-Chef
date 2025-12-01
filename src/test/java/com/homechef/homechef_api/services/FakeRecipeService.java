@@ -15,12 +15,10 @@ public class FakeRecipeService extends RecipeService {
     @Override
     public List<Recipe> searchByIngredients(String ingredient) {
 
-        // → Necessário para o teste "searchEmptyIngredientsReturnsEmptyList"
         if (ingredient == null || ingredient.isBlank()) {
             return List.of();
         }
 
-        // → Retorno para "chicken" (necessário para o teste principal)
         if (ingredient.equalsIgnoreCase("chicken")) {
             return List.of(
                     new Recipe(
@@ -36,7 +34,6 @@ public class FakeRecipeService extends RecipeService {
             );
         }
 
-        // → Para qualquer outro ingrediente, retorna vazio
         return List.of();
     }
 
